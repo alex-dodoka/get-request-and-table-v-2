@@ -1,0 +1,21 @@
+{
+  "name": "GET request and table v.2",
+  "authors": [
+    "alex-dodoka <neksus.92@mail.ru>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "*",
+    "bootstrap": "*"
+  }
+}
