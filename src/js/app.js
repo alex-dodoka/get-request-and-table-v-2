@@ -24,6 +24,11 @@ function drawData(modelData) {
     return '<tr class="row-table">' + // навешиваю класс на каждый ряд таблицы, что бы потом по этом классу можно было очисть всю таблицу
         '<td>' + modelData.id + '</td>' +
         '<td>' + modelData.firstName + '</td>' +
+        '<td>' + modelData.lastName + '</td>' +
+        '<td>' + modelData.email + '</td>' +
+        '<td>' + modelData.phone + '</td>' +
+        '<td>' + modelData.adress + '</td>' +
+        '<td>' + modelData.description + '</td>' +
         '</tr>'
 }
 

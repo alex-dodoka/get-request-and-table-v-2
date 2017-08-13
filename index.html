@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="src/css/custom-styles.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
 
 <button onclick="getDataFromUrl()">Получить данные с сервера</button>
 <button onclick="clearTable('row-table')">Очистить таблицу</button>
 
-<table id="table_for_data">
+<table id="table_for_data" class="table">
     <tr>
         <th>Id</th>
         <th>Firstname</th>
+        <th>Lastname</th>
+        <th>E-mail</th>
+        <th>Phone</th>
+        <th>Adress</th>
+        <th>Description</th>
     </tr>
 </table>
 
