@@ -27,7 +27,7 @@ function drawData(modelData) {
         '<td>' + modelData.lastName + '</td>' +
         '<td>' + modelData.email + '</td>' +
         '<td>' + modelData.phone + '</td>' +
-        '<td>' + modelData.adress + '</td>' +
+        '<td>' + `${modelData.adress.city} ${modelData.adress.state} ${modelData.adress.streetAddress} ${modelData.adress.zip}` + '</td>' +
         '<td>' + modelData.description + '</td>' +
         '</tr>'
 }
