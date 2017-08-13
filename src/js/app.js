@@ -15,7 +15,15 @@ function getDataFromUrl() {
             //  прогоняем массив объектов в цикле и по очереди их отрисоваваем
             for (let i = 0; i < dataFromServer.length; i++) {
                 let html = drawData(dataFromServer[i]);
+
+                let adress = dataFromServer[i].adress;
+                for (let i = 0; i < adress.length; i++) {
+                    let home = adress[i];
+                    addHtml(tableId, home);
+                }
+
                 addHtml(tableId, html);
+
             }
         });
 }
@@ -27,7 +35,9 @@ function drawData(modelData) {
         '<td>' + modelData.lastName + '</td>' +
         '<td>' + modelData.email + '</td>' +
         '<td>' + modelData.phone + '</td>' +
-        '<td>' + `${modelData.adress.city} ${modelData.adress.state} ${modelData.adress.streetAddress} ${modelData.adress.zip}` + '</td>' +
+        '<td>' + modelData.adress + '</td>' +
+        // '<td>' + `${modelData.adress.city}, ${modelData.adress.state}, ${modelData.adress.streetAddress},
+        // ${modelData.adress.zip}` + '</td>' +
         '<td>' + modelData.description + '</td>' +
         '</tr>'
 }
