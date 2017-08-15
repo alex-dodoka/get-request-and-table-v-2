@@ -14,30 +14,27 @@ function getDataFromUrl() {
         .done((dataFromServer) => {
             //  прогоняем массив объектов в цикле и по очереди их отрисоваваем
             for (let i = 0; i < dataFromServer.length; i++) {
-                let html = drawData(dataFromServer[i]);
-
                 let adress = dataFromServer[i].adress;
-                for (let i = 0; i < adress.length; i++) {
-                    let home = adress[i];
-                    addHtml(tableId, home);
-                }
+                let fullAddres = "";
 
+                for (let addr in adress) {
+                    fullAddres += adress[addr];
+                }
+                let html = drawData(dataFromServer[i], fullAddres);
                 addHtml(tableId, html);
 
             }
         });
 }
 
-function drawData(modelData) {
+function drawData(modelData, home) {
     return '<tr class="row-table">' + // навешиваю класс на каждый ряд таблицы, что бы потом по этом классу можно было очисть всю таблицу
         '<td>' + modelData.id + '</td>' +
         '<td>' + modelData.firstName + '</td>' +
         '<td>' + modelData.lastName + '</td>' +
         '<td>' + modelData.email + '</td>' +
         '<td>' + modelData.phone + '</td>' +
-        '<td>' + modelData.adress + '</td>' +
-        // '<td>' + `${modelData.adress.city}, ${modelData.adress.state}, ${modelData.adress.streetAddress},
-        // ${modelData.adress.zip}` + '</td>' +
+        '<td>' + home + '</td>' +
         '<td>' + modelData.description + '</td>' +
         '</tr>'
 }
